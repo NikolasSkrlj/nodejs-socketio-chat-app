@@ -6,6 +6,9 @@ const button = document.querySelector("#submitBtn");
 const locationButton = document.querySelector("#location");
 const messages = document.querySelector("#messages");
 
+const toggleButton = document.querySelector("#toggle");
+const sidebar = document.querySelector("#sidebar");
+
 //Templates
 const messageTemplate = document.querySelector("#message-template").innerHTML;
 const locationTemplate = document.querySelector("#location-template").innerHTML;
@@ -71,7 +74,7 @@ socket.on("roomData", ({ room, users }) => {
     room,
     users,
   });
-  document.querySelector("#sidebar").innerHTML = html;
+  document.querySelector("#sidebar").innerHTML += html;
 });
 
 const form = document.querySelector("form");
@@ -98,6 +101,16 @@ form.addEventListener("submit", (e) => {
       console.log("Message delivered");
       //form.message.focus();
     });
+  }
+});
+
+// to treba popravit ne radi kako treba jer se mijesaju media queryiji i manualno podesavanje
+toggleButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (sidebar.style.marginLeft) {
+    sidebar.style.marginLeft = "-225px";
+  } else {
+    sidebar.style.marginLeft = 0;
   }
 });
 
