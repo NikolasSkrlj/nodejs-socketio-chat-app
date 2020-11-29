@@ -74,7 +74,7 @@ socket.on("roomData", ({ room, users }) => {
     room,
     users,
   });
-  document.querySelector("#sidebar").innerHTML += html;
+  document.querySelector("#sidebar").innerHTML = html;
 });
 
 const form = document.querySelector("form");
