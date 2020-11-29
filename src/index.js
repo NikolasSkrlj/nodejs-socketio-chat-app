@@ -3,6 +3,7 @@ const path = require("path");
 const http = require("http");
 const socketio = require("socket.io");
 const Filter = require("bad-words");
+const cors = require("cors");
 
 const app = express();
 const server = http.createServer(app);
@@ -21,6 +22,7 @@ const {
 } = require("../src/utils/users");
 
 app.use(express.static(path.join(__dirname, "../public")));
+app.use(cors());
 
 const port = 3000 || process.env.PORT;
 
