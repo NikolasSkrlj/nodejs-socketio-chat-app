@@ -24,7 +24,7 @@ const {
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(cors());
 
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 
 io.on("connection", (socket) => {
   // socket je objekt i sadrzi info o konekciji
