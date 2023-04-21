@@ -2,11 +2,6 @@
 
 Simple chat application built with Node.js and Socket.io.  
 
-# URL
-
-https://nikolas-chat-app.herokuapp.com/
-
-*Application is hosted on Heroku for exemplary purposes. 
 
 # Technology
   - Node and Express for server-side rendering
